@@ -13,7 +13,7 @@ class PokemonTests {
         Pokemon poke2 = new Pokemon("pokemon2", null,new Stats(20, 100) );
 
         boolean resultat= poke1.estVainqueurContre(poke2);
-        assertThat(resultat).isEqualTo(poke1);
+        assertThat(resultat).isTrue();
 
     }
     //Le poke 2 a + d'attaque que poke 1 -> poke 2
@@ -23,7 +23,7 @@ class PokemonTests {
         Pokemon poke1= new Pokemon("pokemon2", null,new Stats(20, 100) );
 
         boolean resultat= poke2.estVainqueurContre(poke1);
-        assertThat(resultat).isEqualTo(poke2);
+        assertThat(resultat).isTrue();
 
     }
 
@@ -34,7 +34,7 @@ class PokemonTests {
         Pokemon poke2 = new Pokemon("pokemon2", null,new Stats(100, 20) );
 
         boolean resultat= poke1.estVainqueurContre(poke2);
-        assertThat(resultat).isEqualTo(poke1);
+        assertThat(resultat).isTrue();
 
     }
 
@@ -46,17 +46,18 @@ class PokemonTests {
         Pokemon poke1 = new Pokemon("pokemon2", null,new Stats(100, 20) );
 
         boolean resultat= poke2.estVainqueurContre(poke1);
-        assertThat(resultat).isEqualTo(poke2);
+        assertThat(resultat).isTrue();
 
     }
     // Les deux on la meme attaque et la meme defense -> poke 1
 
+    @Test
     void poke1_poke2_memeDef_memeAttaque_poke1_gagne(){
         Pokemon poke1 = new Pokemon("pokemon1", null,new Stats(100, 100) );
         Pokemon poke2 = new Pokemon("pokemon2", null,new Stats(100, 100) );
 
         boolean resultat= poke1.estVainqueurContre(poke2);
-        assertThat(resultat).isEqualTo(poke1);
+        assertThat(resultat).isTrue();
 
     }
 
